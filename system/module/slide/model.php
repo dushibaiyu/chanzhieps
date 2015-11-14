@@ -203,7 +203,7 @@ class slideModel extends model
 
         $imageIdList = array_keys($fileTitles);
         $image = $this->dao->select('*')->from(TABLE_FILE)->where('id')->eq($imageIdList[0])->fetch(); 
-        $image->webPath = '/data/' . $image->pathname;
+        $image->webPath = getHomeRoot().'data/'. $image->pathname;
 
         return $image->webPath;
     }
